@@ -59,7 +59,8 @@ struct MiniCake: View {
                     Image(.cakeBc)
                         .resizable()
                         .scaledToFill()
-                        .ignoresSafeArea()
+                        .edgesIgnoringSafeArea(.all)
+
                     
                     
                     VStack{
@@ -181,72 +182,83 @@ struct MiniCake: View {
                             
                         }
                         
-                        HStack{
-                            Divider()
-                                .frame(width:107 ,height: 3)
-                                .overlay(.black)
+              NavigationLink{
+                           Bouqette()
+                        }label: {
+                            Label("Want to get Bouqette?",systemImage: "camera.macro.circle")
                             
-                            Text("Candles \tand \tTopper")
-                                .font(.custom("PinyonScript-Regular", size: 35 ))
-                                .bold()
-                            
-                            Divider()
-                                .frame(width:107 ,height: 3)
-                                .overlay(.black)
-                            
-                        }
-                        List{
-                            Picker("Candle" , selection: $ballonKind){
-                                ForEach(Ballons.allCases, id: \.self)
-                                {fill in
-                                    Text("\(fill)".capitalized).tag(fill)}
-                            }
-                            .pickerStyle(.segmented)
-                            
-                            if ballonKind == .letters{
-                                let rowsNum = [GridItem(.adaptive(minimum: 50))]
-                                LazyHGrid(rows: rowsNum){
-                                    Image("Asilver")
-                                        .resizable()
-                                        .frame(width: 70, height: 70)
-                                    HStack{
-                                        Button(action: { ballonColor = "silver"
-                                            
-                                        }) {
-                                            Circle()
-                                                .foregroundColor(.silver)
-                                                .frame(width: 15)
-                                                .overlay(
-                                                    Circle()
-                                                        .stroke(Color.black, lineWidth: 3)
-                                                    
-                                                )
-                                                .padding(15)
-                                        }
-                                        Button(action: { ballonColor = "silver"
-                                            
-                                        }) {
-                                            Circle()
-                                                .foregroundColor(.silver)
-                                                .frame(width: 15)
-                                                .overlay(
-                                                    Circle()
-                                                        .stroke(Color.black, lineWidth: 3)
-                                                    
-                                                )
-                                                .padding(15)
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                                
-                            }
-                            
-                            
-                            
-                        }
+                                .padding()
+                                .background(.ultraThinMaterial)
+                                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                                .cornerRadius(10)
+                        }.padding()
+//                        HStack{
+//                            Divider()
+//                                .frame(width:107 ,height: 3)
+//                                .overlay(.black)
+//                            
+//                            Text("Candles \tand \tTopper")
+//                                .font(.custom("PinyonScript-Regular", size: 35 ))
+//                                .bold()
+//                            
+//                            Divider()
+//                                .frame(width:107 ,height: 3)
+//                                .overlay(.black)
+//                            
+//                        }
+//                        List{
+//                            Picker("Candle" , selection: $ballonKind){
+//                                ForEach(Ballons.allCases, id: \.self)
+//                                {fill in
+//                                    Text("\(fill)".capitalized).tag(fill)}
+//                            }
+//                            .pickerStyle(.segmented)
+//                            
+//                            if ballonKind == .letters{
+//                                let rowsNum = [GridItem(.adaptive(minimum: 50))]
+//                                LazyHGrid(rows: rowsNum){
+//                                    Image("Asilver")
+//                                        .resizable()
+//                                        .frame(width: 70, height: 70)
+//                                    HStack{
+//                                        Button(action: { ballonColor = "silver"
+//                                            
+//                                        }) {
+//                                            Circle()
+//                                                .foregroundColor(.silver)
+//                                                .frame(width: 15)
+//                                                .overlay(
+//                                                    Circle()
+//                                                        .stroke(Color.black, lineWidth: 3)
+//                                                    
+//                                                )
+//                                                .padding(15)
+//                                        }
+//                                        Button(action: { ballonColor = "silver"
+//                                            
+//                                        }) {
+//                                            Circle()
+//                                                .foregroundColor(.silver)
+//                                                .frame(width: 15)
+//                                                .overlay(
+//                                                    Circle()
+//                                                        .stroke(Color.black, lineWidth: 3)
+//                                                    
+//                                                )
+//                                                .padding(15)
+//                                        }
+//                                        
+//                                    }
+//                                    
+//                                }
+//                                
+//                                
+//                            }
+//                            
+//                            
+//                            
+//                        }
+
                         
                     
                     }

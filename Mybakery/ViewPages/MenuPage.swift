@@ -81,13 +81,13 @@ struct MenuPage: View {
                 VStack{
                     HStack{
                         Divider()
-                            .frame(width:130 ,height: 1)
+                            .frame(width:132 ,height: 4)
                             .overlay(.black)
                         Text("Menu")
                             .font(.custom("PinyonScript-Regular", size: 35))
                             .bold()
                         Divider()
-                            .frame(width:130 ,height: 1)
+                            .frame(width:136,height: 4)
                             .overlay(.black)
                         
                     }
@@ -114,8 +114,10 @@ struct MenuPage: View {
                                 
                                 VStack(alignment: .leading) {
                                     
+                                    //  Text("\(coffe.name)................... $\(String(format : "%2.f",coffe.price)).00")
+                                   // .font(.custom("PTSerif-Italic", size: 18))
                                     
-                                    Text("\(coffee.name)\t\t\t\t")
+                                    Text("\(coffee.name).................. $\(String(format : "%2.f",coffee.price)).00")
                                         .font(.custom("PTSerif-Italic", size: 18))
                                     
 //                                    Text("\(coffee.cal) cal")
@@ -123,8 +125,7 @@ struct MenuPage: View {
                                       
                                     
                                 }
-                                
-                                        Text("$\(String(format : "%2.f",coffee.price)).00")
+
                                    
                                 
                                
